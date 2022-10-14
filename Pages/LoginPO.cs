@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using SwagLabsProject.Initials;
+using SwagLabsProject.Pages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,16 +10,14 @@ using System.Threading.Tasks;
 
 namespace SwagLabsProject.Login
 {
-    public class LoginPO: PageBase
+    public class LoginPO : PageBase
     {
         private By _usernameField = By.Id("user-name");
         private By _passwordField = By.Id("password");
         private By _loginBtn = By.Id("login-button");
-        
 
-        public LoginPO (IWebDriver _driver) : base(_driver)
+        public LoginPO(IWebDriver driver) : base(driver)
         {
-            
         }
 
         public void SetUsername(string uName)
@@ -36,11 +35,13 @@ namespace SwagLabsProject.Login
             SendKeys(_passwordField, password);
         }
 
-        public void LogInWithCreds(string uName, string password)
+        public  HomepagePO LogInWithCreds(string uName, string password)
         {
             SetUsername(uName);
             SetPassword(password);
             Click(_loginBtn);
+
+            return new HomepagePO(Driver);
         }
 
         public void CheckThatUserIsLoggedIn(string url)

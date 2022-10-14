@@ -11,7 +11,7 @@ namespace SwagLabsProject.Tests
         [Test]
         public void LogIn_UseValidAndExistCreds_UserIsLogedIn()
         {
-            LoginPO loginPage = new LoginPO(_driver);
+            LoginPO loginPage = new LoginPO(Driver);
 
             loginPage.LogInWithCreds("standard_user", "secret_sauce");
             loginPage.CheckThatUserIsLoggedIn("https://www.saucedemo.com/inventory.html");

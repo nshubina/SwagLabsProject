@@ -6,20 +6,20 @@ namespace SwagLabsProject
 {
     public class BasePO
     {
-        protected IWebDriver _driver;
+        protected IWebDriver Driver;
 
         [SetUp]
         public void Setup()
         {
-            _driver = new ChromeDriver();
-            _driver.Navigate().GoToUrl("https://www.saucedemo.com/");
-            _driver.Manage().Window.Maximize();
+            Driver = new ChromeDriver();
+            Driver.Navigate().GoToUrl("https://www.saucedemo.com/");
+            Driver.Manage().Window.Maximize();
         }
 
         [TearDown]
         public void Close()
         {
-            _driver.Quit();
+            Driver.Quit();
         }
 
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OpenQA.Selenium;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,11 @@ namespace SwagLabsProject.Pages
 {
     public class HomepagePO
     {
+        protected IWebDriver Driver;
 
+        public HomepagePO(IWebDriver driver)
+        {
+            Driver = driver;
+        }
     }
 }
