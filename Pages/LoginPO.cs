@@ -21,18 +21,25 @@ namespace SwagLabsProject.Login
             
         }
 
-        public void LogInWithCreds(string uName, string password)
+        public void SetUsername(string uName)
         {
             Click(_usernameField);
             Clear(_usernameField);
-
             SendKeys(_usernameField, uName);
+        }
 
+        public void SetPassword(string password)
+        {
             Click(_passwordField);
             Clear(_passwordField);
 
-            SendKeys(_passwordField,password);
+            SendKeys(_passwordField, password);
+        }
 
+        public void LogInWithCreds(string uName, string password)
+        {
+            SetUsername(uName);
+            SetPassword(password);
             Click(_loginBtn);
         }
 
