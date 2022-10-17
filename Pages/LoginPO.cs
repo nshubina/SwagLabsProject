@@ -44,12 +44,5 @@ namespace SwagLabsProject.Login
             return new HomepagePO(Driver);
         }
 
-        public void CheckThatUserIsLoggedIn(string url)
-        {
-            string currentUrl = Driver.Url;
-            Assert.AreEqual(url, currentUrl);
-            
-        }
-
     }
 }
