@@ -11,9 +11,18 @@ namespace SwagLabsProject.Pages
     {
         protected IWebDriver Driver;
 
+        private By _productTitle = By.CssSelector(".header_secondary_container .title");
+
+
         public HomepagePO(IWebDriver driver)
         {
             Driver = driver;
+        }
+
+        public string getTitle()
+        {
+            return Driver.FindElement(_productTitle).Text;
+                      
         }
     }
 }

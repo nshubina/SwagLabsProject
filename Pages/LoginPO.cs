@@ -21,7 +21,7 @@ namespace SwagLabsProject.Login
         }
 
         public void SetUsername(string uName)
-        {
+        { 
             Click(_usernameField);
             Clear(_usernameField);
             SendKeys(_usernameField, uName);
@@ -33,6 +33,8 @@ namespace SwagLabsProject.Login
             Clear(_passwordField);
 
             SendKeys(_passwordField, password);
+
+
         }
 
         public  HomepagePO LogInWithCreds(string uName, string password)
@@ -44,5 +46,12 @@ namespace SwagLabsProject.Login
             return new HomepagePO(Driver);
         }
 
+
+
+
+
+       
     }
+
 }
+
