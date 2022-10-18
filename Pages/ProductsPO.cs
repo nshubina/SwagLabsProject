@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace SwagLabsProject.Pages
 {
-    public class HomepagePO
+    public class ProductsPO
     {
         protected IWebDriver Driver;
 
         private By _productTitle = By.CssSelector(".header_secondary_container .title");
 
 
-        public HomepagePO(IWebDriver driver)
+        public ProductsPO(IWebDriver driver)
         {
             Driver = driver;
         }

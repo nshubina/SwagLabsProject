@@ -16,9 +16,9 @@ namespace SwagLabsProject.Tests
         {
             var loginPage = new LoginPO(Driver);
 
-            var homePage = loginPage.LoginWithCreds("standard_user", "secret_sauce");
+            var productsPage = loginPage.LoginWithCreds("standard_user", "secret_sauce");
           
-            Assert.AreEqual(homePage.getTitle(), "PRODUCTS");
+            Assert.AreEqual(productsPage.getTitle(), "PRODUCTS");
         }
 
         [Test]

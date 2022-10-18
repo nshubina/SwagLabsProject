@@ -36,12 +36,12 @@ namespace SwagLabsProject.Login
             SendKeys(_passwordField, password);
         }
      
-        public HomepagePO LoginWithCreds(string uName, string password)
+        public ProductsPO LoginWithCreds(string uName, string password)
         {
             SetUsername(uName);
             SetPassword(password);
             Click(_loginBtn);
-            return new HomepagePO(Driver);
+            return new ProductsPO(Driver);
         }
 
         public string GetErrorMessage()
