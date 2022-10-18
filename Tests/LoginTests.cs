@@ -12,7 +12,7 @@ namespace SwagLabsProject.Tests
     {
       
         [Test]
-        public void LogIn_UseValidAndExistCreds_UserIsLogedIn()
+        public void LogIn_WithUseValidAndExistCreds_ShouldUserIsLogedIn()
         {
             var loginPage = new LoginPO(Driver);
 
@@ -22,7 +22,7 @@ namespace SwagLabsProject.Tests
         }
 
         [Test]
-        public void LogIn_UseInvalidUserNameAndValidPassword_AppearErrorMsg()
+        public void LogIn_WithUseInvalidUserNameAndValidPassword_ShouldAppearErrorMsg()
         {
             var loginPage = new LoginPO(Driver);         
             loginPage.LoginWithCreds("testuser12", "secret_sauce");
