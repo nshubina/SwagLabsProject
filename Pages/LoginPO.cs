@@ -15,6 +15,7 @@ namespace SwagLabsProject.Login
         private By _usernameField = By.Id("user-name");
         private By _passwordField = By.Id("password");
         private By _loginBtn = By.Id("login-button");
+        private By _loginErrorMsg = By.XPath("//form/div[3]/h3");
 
         public LoginPO(IWebDriver driver) : base(driver)
         {
@@ -33,24 +34,20 @@ namespace SwagLabsProject.Login
             Clear(_passwordField);
 
             SendKeys(_passwordField, password);
-
-
         }
-
-        public  HomepagePO LogInWithCreds(string uName, string password)
+     
+        public HomepagePO LoginWithCreds(string uName, string password)
         {
             SetUsername(uName);
             SetPassword(password);
             Click(_loginBtn);
-
             return new HomepagePO(Driver);
         }
 
-
-
-
-
-       
+        public string GetErrorMessage()
+        {
+            return Driver.FindElement(_loginErrorMsg).Text;
+        }
     }
 
 }

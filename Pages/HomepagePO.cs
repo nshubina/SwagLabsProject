@@ -21,8 +21,7 @@ namespace SwagLabsProject.Pages
 
         public string getTitle()
         {
-            return Driver.FindElement(_productTitle).Text;
-                      
+            return Driver.FindElement(_productTitle).Text;           
         }
     }
 }
