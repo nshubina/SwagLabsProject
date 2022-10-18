@@ -19,26 +19,19 @@ namespace SwagLabsProject.Tests
             var homePage = loginPage.LoginWithCreds("standard_user", "secret_sauce");
           
             Assert.AreEqual(homePage.getTitle(), "PRODUCTS");
-
         }
 
         [Test]
         public void LogIn_UseInvalidUserNameAndValidPassword_AppearErrorMsg()
         {
-            WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(10));
-
-            string ErrorMsg = "Epic sadface: Username and password do not match any user in this service";
-
-            LoginPO loginPage = new LoginPO(Driver);
-            
+            var loginPage = new LoginPO(Driver);         
             loginPage.LoginWithCreds("testuser12", "secret_sauce");
-            wait.Until(ExpectedConditions.ElementIsVisible(By.ClassName("error-button")));
 
-            Assert.AreEqual(loginPage.GetErrorMessage(), ErrorMsg);
+            var waiter = new WebDriverWait(Driver, TimeSpan.FromSeconds(5));
+            waiter.Until(ExpectedConditions.ElementIsVisible(By.ClassName("error-button")));
 
+            var errorMsg = "Epic sadface: Username and password do not match any user in this service";
+            Assert.AreEqual(loginPage.GetErrorMessage(), errorMsg);
         }
-
-
-
     }
 }
