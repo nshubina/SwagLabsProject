@@ -18,7 +18,7 @@ namespace SwagLabsProject.Tests
 
             var productsPage = loginPage.LoginWithCreds("standard_user", "secret_sauce");
           
-            Assert.AreEqual(productsPage.getCategoryTitle(), "PRODUCTS");
+            Assert.AreEqual(productsPage.GetCategoryTitle(), "PRODUCTS");
         } 
 
         [Test]

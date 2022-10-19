@@ -19,18 +19,18 @@ namespace SwagLabsProject.Pages
         {
         }
 
-        public string getCategoryTitle()
+        public string GetCategoryTitle()
         {
             return GetText(_categoryTitle);
         }
 
-        public string getProductName()
+        public string GetProductName()
         {
             string itemName = GetText(_productName);
             return itemName;
         }
 
-        public ProductDetailPO selectProduct()
+        public ProductDetailPO SelectProduct()
         {
             Click(_productName);
             return new ProductDetailPO(Driver);
