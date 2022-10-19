@@ -12,31 +12,29 @@ namespace SwagLabsProject.Pages
 {
     public class ProductPO : PageBase
     {
-        protected IWebDriver Driver;
-
-        private By _productTitle = By.CssSelector(".header_secondary_container .title");
-        private By _itemName = By.Id("item_4_title_link");
+        private By _categoryTitle = By.CssSelector(".header_secondary_container .title");
+        private By _productName = By.Id("item_4_title_link");
 
         public ProductPO(IWebDriver driver) : base(driver)
         {
         }
 
-        public string getTitle()
+        public string getCategoryTitle()
         {
-            return GetText(_productTitle);
+            return GetText(_categoryTitle);
         }
 
-        public string getItemName()
+        public string getProductName()
         {
-            return GetText(_itemName);
+            string itemName = GetText(_productName);
+            return itemName;
         }
-/*
+
         public ProductDetailPO selectProduct()
         {
-            Click(_itemName);
-            Driver.FindElement(product)
+            Click(_productName);
             return new ProductDetailPO(Driver);
         }
-   */
+
     }
 }

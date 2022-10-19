@@ -18,8 +18,8 @@ namespace SwagLabsProject.Tests
 
             var productsPage = loginPage.LoginWithCreds("standard_user", "secret_sauce");
           
-            Assert.AreEqual(productsPage.getTitle(), "PRODUCTS");
-        }
+            Assert.AreEqual(productsPage.getCategoryTitle(), "PRODUCTS");
+        } 
 
         [Test]
         public void LogIn_WithUseInvalidUserNameAndValidPassword_ShouldAppearErrorMsg()
