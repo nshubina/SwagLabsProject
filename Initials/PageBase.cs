@@ -16,7 +16,6 @@ namespace SwagLabsProject.Initials
             return Driver.FindElement(by);
         }
 
-
         public void Click(By by)
         {
             Element(by).Click();
@@ -32,7 +31,9 @@ namespace SwagLabsProject.Initials
             Element(by).SendKeys(txt);
         }
 
-       
-
+        public string GetText(By by)
+        {
+           return Element(by).Text;
+        }
     }
 }
