@@ -36,17 +36,17 @@ namespace SwagLabsProject.Login
             SendKeys(_passwordField, password);
         }
      
-        public ProductsPO LoginWithCreds(string uName, string password)
+        public ProductPO LoginWithCreds(string uName, string password)
         {
             SetUsername(uName);
             SetPassword(password);
             Click(_loginBtn);
-            return new ProductsPO(Driver);
+            return new ProductPO(Driver);
         }
 
         public string GetErrorMessage()
         {
-            return Driver.FindElement(_loginErrorMsg).Text;
+            return GetText(_loginErrorMsg);
         }
     }
 
