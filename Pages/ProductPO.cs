@@ -7,7 +7,7 @@ namespace SwagLabsProject.Pages
     {
         private By _categoryTitle = By.CssSelector(".header_secondary_container .title");
         private By _productName = By.Id("item_4_title_link");
-        private By _addToCardBtn = By.Id("add-to-cart-sauce-labs-bike-light");
+        private By _addToCartBtn = By.Id("add-to-cart-sauce-labs-bike-light");
         private By _removeProductBtn = By.Id("remove-sauce-labs-bike-light");
         private By _cardIconBtn = By.ClassName("shopping_cart_link");
         public ProductPO(IWebDriver driver) : base(driver)
@@ -33,7 +33,7 @@ namespace SwagLabsProject.Pages
 
         public void AddProductToCard()
         {
-            Click(_addToCardBtn);
+            Click(_addToCartBtn);
         }
 
         public void RemoveProduct()
@@ -41,7 +41,12 @@ namespace SwagLabsProject.Pages
             Click(_removeProductBtn);
         }
 
-        public string getButtonText()
+        public string GetAddToCartButtonText()
+        {
+            return GetText(_addToCartBtn);
+        }
+
+        public string GetRemoveButtonText()
         {
             return GetText(_removeProductBtn);
         }

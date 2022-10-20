@@ -31,7 +31,7 @@ namespace SwagLabsProject.Tests
 
             Assert.Multiple(() =>
             {
-                Assert.AreEqual(productPage.getAddToCartButtonText(), "REMOVE");
+                Assert.AreEqual(productPage.GetRemoveButtonText(), "REMOVE");
                 Assert.Greater(c, 0);
             });
         }
@@ -50,7 +50,7 @@ namespace SwagLabsProject.Tests
 
             Assert.Multiple(() =>
             {
-                Assert.AreEqual(productPage.getAddToCartButtonText(), "ADD TO CART");
+                Assert.AreEqual(productPage.GetAddToCartButtonText(), "ADD TO CARD");
                 Assert.Greater(c, 0);
             });
 
