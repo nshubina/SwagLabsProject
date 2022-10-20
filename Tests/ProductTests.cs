@@ -50,7 +50,7 @@ namespace SwagLabsProject.Tests
 
             Assert.Multiple(() =>
             {
-                Assert.AreEqual(productPage.GetAddToCartButtonText(), "ADD TO CARD");
+                Assert.AreEqual(productPage.GetAddToCartButtonText(), "ADD TO CART");
                 Assert.Greater(c, 0);
             });
 
