@@ -20,13 +20,20 @@ namespace SwagLabsProject.Tests
         }
 
         [Test]
-        public void When_ClickAddButton_Expect_ProductAddsToCard()
+        public void When_ClickAddButtonOnProduct_Expect_ProductAddsToCard()
         {
             var loginPage = new LoginPO(Driver);
             var productPage = loginPage.LoginWithCreds("standard_user", "secret_sauce");
 
             productPage.AddToCard();
 
+            int c = productPage.CardIndexChanged();
+
+            Assert.Multiple(() =>
+            {
+                Assert.AreEqual(productPage.getButtonText(), "REMOVE");
+                Assert.Greater(c, 0);
+            });
         }
     }
 }
