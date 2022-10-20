@@ -31,9 +31,14 @@ namespace SwagLabsProject.Pages
             return new ProductDetailPO(Driver);
         }
 
-        public void AddToCard()
+        public void AddProductToCard()
         {
             Click(_addToCardBtn);
+        }
+
+        public void RemoveProduct()
+        {
+            Click(_removeProductBtn);
         }
 
         public string getButtonText()
@@ -41,13 +46,9 @@ namespace SwagLabsProject.Pages
             return GetText(_removeProductBtn);
         }
 
-
         public int CardIndexChanged()
         {
-
-            return Driver.FindElements(_cardIconBtn).Count;
+            return Count(_cardIconBtn);
         }
-
-
     }
 }
