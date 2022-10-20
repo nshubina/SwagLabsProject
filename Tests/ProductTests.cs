@@ -1,11 +1,9 @@
 ﻿using NUnit.Framework;
 using SwagLabsProject.Login;
-using SwagLabsProject.Pages;
-using System;
 
 namespace SwagLabsProject.Tests
 {
-    public class ProductTests:BasePO
+    public class ProductTests : BasePO
     {
         [Test]
         public void When_ClickProduct_Expect_ProductDetails()
@@ -15,17 +13,20 @@ namespace SwagLabsProject.Tests
 
             var productName = productPage.GetProductName();
 
-            var productDetailPage = productPage.SelectProduct();
+            var productDetailPage = productPage.ClickOnProduct();
             var detailProductName = productDetailPage.GetDetailProductName();
-           
+
             Assert.AreEqual(productName, detailProductName);
-
-
-
         }
 
+        [Test]
+        public void When_ClickAddButton_Expect_ProductAddsToCard()
+        {
+            var loginPage = new LoginPO(Driver);
+            var productPage = loginPage.LoginWithCreds("standard_user", "secret_sauce");
 
+            productPage.AddToCard();
 
-
+        }
     }
 }
