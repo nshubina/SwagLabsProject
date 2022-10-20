@@ -6,7 +6,7 @@ namespace SwagLabsProject.Tests
     public class ProductTests : BasePO
     {
         [Test]
-        public void When_ClickProduct_Expect_ProductDetails()
+        public void When_ClickProductName_Expect_ProductDetails()
         {
             var loginPage = new LoginPO(Driver);
             var productPage = loginPage.LoginWithCreds("standard_user", "secret_sauce");
@@ -20,12 +20,12 @@ namespace SwagLabsProject.Tests
         }
 
         [Test]
-        public void When_ClickAddButtonOnProduct_Expect_ProductAddsToCard()
+        public void When_ClickAddToCartBtnOnProduct_Expect_ProductAddsToCard()
         {
             var loginPage = new LoginPO(Driver);
             var productPage = loginPage.LoginWithCreds("standard_user", "secret_sauce");
 
-            productPage.AddToCard();
+            productPage.AddProductToCard();
 
             int c = productPage.CardIndexChanged();
 
@@ -34,6 +34,26 @@ namespace SwagLabsProject.Tests
                 Assert.AreEqual(productPage.getButtonText(), "REMOVE");
                 Assert.Greater(c, 0);
             });
+        }
+
+        [Test]
+        public void When_ClickRemoveButtonOnProduct_Expect_ProductIsRemovedFromCart()
+        {
+            var loginPage = new LoginPO(Driver);
+            var productPage = loginPage.LoginWithCreds("standard_user", "secret_sauce");
+
+            productPage.AddProductToCard();
+            productPage.RemoveProduct();
+
+
+            int c = productPage.CardIndexChanged();
+
+            Assert.Multiple(() =>
+            {
+                Assert.AreEqual(productPage.getButtonText(), "ADD TO CARD");
+                Assert.Greater(c, 0);
+            });
+
         }
     }
 }
