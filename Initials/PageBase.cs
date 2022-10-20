@@ -8,7 +8,7 @@ namespace SwagLabsProject.Initials
         protected IWebDriver Driver;
         public PageBase(IWebDriver driver)
         {
-            Driver = driver;   
+            Driver = driver;
         }
 
         public IWebElement Element(By by)
@@ -33,7 +33,12 @@ namespace SwagLabsProject.Initials
 
         public string GetText(By by)
         {
-           return Element(by).Text;
+            return Element(by).Text;
+        }
+
+        public int Count(By by)
+        {
+            return Driver.FindElements(by).Count;
         }
     }
 }
