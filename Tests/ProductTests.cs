@@ -27,12 +27,12 @@ namespace SwagLabsProject.Tests
 
             productPage.AddProductToCard();
 
-            int c = productPage.CardIndexChanged();
+            int cartIndex = productPage.CardIndexChanged();
 
             Assert.Multiple(() =>
             {
                 Assert.AreEqual(productPage.GetRemoveButtonText(), "REMOVE");
-                Assert.Greater(c, 0);
+                Assert.Greater(cartIndex, 0);
             });
         }
 
@@ -46,14 +46,13 @@ namespace SwagLabsProject.Tests
             productPage.RemoveProduct();
 
 
-            int c = productPage.CardIndexChanged();
+            int cartIndex = productPage.CardIndexChanged();
 
             Assert.Multiple(() =>
             {
                 Assert.AreEqual(productPage.GetAddToCartButtonText(), "ADD TO CART");
-                Assert.Greater(c, 0);
+                Assert.Greater(cartIndex, 0);
             });
-
         }
     }
 }
