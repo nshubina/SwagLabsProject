@@ -6,7 +6,7 @@ namespace SwagLabsProject.Pages
     public class ProductPO : PageBase
     {
         private By _categoryTitle = By.CssSelector(".header_secondary_container .title");
-        private By _productName = By.Id("item_4_title_link");
+        private By _productName = By.Id("item_0_title_link");
         private By _addToCartBtn = By.Id("add-to-cart-sauce-labs-bike-light");
         private By _removeProductBtn = By.Id("remove-sauce-labs-bike-light");
         private By _cardIconBtn = By.ClassName("shopping_cart_link");
@@ -25,10 +25,10 @@ namespace SwagLabsProject.Pages
             return itemName;
         }
 
-        public ProductDetailPO ClickOnProduct()
+        public ProductDetailsPO ClickOnProduct()
         {
             Click(_productName);
-            return new ProductDetailPO(Driver);
+            return new ProductDetailsPO(Driver);
         }
 
         public void AddProductToCard()
