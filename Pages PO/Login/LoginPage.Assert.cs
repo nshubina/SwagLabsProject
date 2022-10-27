@@ -1,14 +1,17 @@
 ﻿using NUnit.Framework;
-using SwagLabsProject.Pages;
 
 namespace SwagLabsProject.Login
 {
     public partial class LoginPage
     {
-        public void AssertHeader()
+        public void AssertHeadersAreEqual(string titleActual, string titleExpected)
         {
-            ProductPO productsPage = new ProductPO(_driver);
-            Assert.AreEqual(productsPage.GetCategoryTitle(), "PRODUCTS");
+            Assert.AreEqual(titleActual, titleExpected);
+        }
+
+        public void AssertElementsAreEqual(string firstElement, string SecondElement)
+        {
+            Assert.AreEqual(firstElement, SecondElement);
         }
     }
 }
