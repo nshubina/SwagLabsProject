@@ -41,6 +41,5 @@ namespace SwagLabsProject.Tests
             productPage.ElementsAreAqualAssert(productPage.GetAddToCartButtonText(), "ADD TO CART");
         }
     }
-
 }
 
