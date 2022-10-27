@@ -1,16 +1,16 @@
 ﻿using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
-using SwagLabsProject.Pages;
+using SwagLabsProject.Pages_PO.Products;
 
 namespace SwagLabsProject.Login
 {
     public partial class LoginPage
     {
-        private IWebDriver driver;
+        private IWebDriver _driver;
 
         public LoginPage(IWebDriver driver)
         {
-            this.driver = driver;
+            this._driver = driver;
             PageFactory.InitElements(driver, this);
         }
 
@@ -29,12 +29,12 @@ namespace SwagLabsProject.Login
             _fldPassword.SendKeys(password);
         }
 
-        public ProductPO LoginWithCreds(string uName, string password)
+        public ProductsPage LoginWithCreds(string uName, string password)
         {
             SetUsername(uName);
             SetPassword(password);
             _btnLogin.Click();
-            return new ProductPO(driver);
+            return new ProductsPage(_driver);
         }
 
         public string GetErrorMessage()

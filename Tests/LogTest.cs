@@ -12,11 +12,7 @@ namespace SwagLabsProject.Tests
             var productsPage = login.LoginWithCreds("standard_user", "secret_sauce");
 
             login.AssertHeader();
-
         }
-
-
-
     }
 }
 

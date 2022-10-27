@@ -7,7 +7,7 @@ namespace SwagLabsProject.Login
     {
         public void AssertHeader()
         {
-            ProductPO productsPage = new ProductPO(driver);
+            ProductPO productsPage = new ProductPO(_driver);
             Assert.AreEqual(productsPage.GetCategoryTitle(), "PRODUCTS");
         }
     }

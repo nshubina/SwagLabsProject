@@ -1,6 +1,6 @@
 ﻿using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
-using SwagLabsProject.Pages;
+using SwagLabsProject.Pages_PO.ProductDetails;
 
 namespace SwagLabsProject.Pages_PO.Products
 {
@@ -25,10 +25,10 @@ namespace SwagLabsProject.Pages_PO.Products
             return itemName;
         }
 
-        public ProductDetailsPO ClickOnProduct()
+        public ProductDetailsPage ClickOnProduct()
         {
             _nameProduct.Click();
-            return new ProductDetailsPO(_driver);
+            return new ProductDetailsPage(_driver);
         }
 
         public void AddProductToCard()
@@ -50,14 +50,5 @@ namespace SwagLabsProject.Pages_PO.Products
         {
             return _btnRemoveProduct.Text;
         }
-
-        /*
-        public int CartIndexChanged()
-        {
-            var pageBase = new PageBase(_driver);
-
-            return pageBase.Count(_btnCartIcon);
-        }*/
-
     }
 }

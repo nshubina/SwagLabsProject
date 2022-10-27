@@ -1,5 +1,5 @@
 ﻿using OpenQA.Selenium;
-
+using SeleniumExtras.PageObjects;
 
 namespace SwagLabsProject.Initials
 {
@@ -9,6 +9,7 @@ namespace SwagLabsProject.Initials
         public PageBase(IWebDriver driver)
         {
             Driver = driver;
+            PageFactory.InitElements(driver, this);
         }
 
         public IWebElement Element(By by)

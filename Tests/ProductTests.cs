@@ -1,14 +1,11 @@
-﻿using NUnit.Framework;
-using SwagLabsProject.Login;
-
-namespace SwagLabsProject.Tests
+﻿namespace SwagLabsProject.Tests
 {
     public class ProductTests : BasePO
-    {
+    {/*
         [Test]
         public void When_ClickProductName_Expect_ProductDetails()
         {
-            var loginPage = new LoginPO(Driver);
+            var loginPage = new LoginPage(Driver);
             var productPage = loginPage.LoginWithCreds("standard_user", "secret_sauce");
 
             var productName = productPage.GetProductName();
@@ -22,7 +19,7 @@ namespace SwagLabsProject.Tests
         [Test]
         public void When_ClickAddToCartBtnOnProduct_Expect_ProductAddsToCard()
         {
-            var loginPage = new LoginPO(Driver);
+            var loginPage = new LoginPage(Driver);
             var productPage = loginPage.LoginWithCreds("standard_user", "secret_sauce");
 
             productPage.AddProductToCard();
@@ -39,7 +36,7 @@ namespace SwagLabsProject.Tests
         [Test]
         public void When_ClickRemoveButtonOnProduct_Expect_ProductIsRemovedFromCart()
         {
-            var loginPage = new LoginPO(Driver);
+            var loginPage = new LoginPage(Driver);
             var productPage = loginPage.LoginWithCreds("standard_user", "secret_sauce");
 
             productPage.AddProductToCard();
@@ -53,6 +50,6 @@ namespace SwagLabsProject.Tests
                 Assert.AreEqual(productPage.GetAddToCartButtonText(), "ADD TO CART");
                 Assert.Greater(cartIndex, 0);
             });
-        }
+        }*/
     }
 }

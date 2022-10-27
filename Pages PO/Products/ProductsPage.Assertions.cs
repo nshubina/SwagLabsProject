@@ -8,6 +8,5 @@ namespace SwagLabsProject.Pages_PO.Products
         {
             Assert.AreEqual(firstElement, secondElement);
         }
-
     }
 }

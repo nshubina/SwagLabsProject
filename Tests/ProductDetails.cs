@@ -3,7 +3,7 @@ using SwagLabsProject.Login;
 
 namespace SwagLabsProject.Tests
 {
-    public class ProductDetailsTests : BasePO
+    public class ProductDetails : BasePO
     {
         [Test]
         public void When_ClickAddToCartButtonOnProductDetailsPage_ShouldItemAddToCart()
@@ -13,9 +13,7 @@ namespace SwagLabsProject.Tests
 
             var productDetailsPage = productPage.ClickOnProduct();
             productDetailsPage.AddToCart();
-
-            productDetailsPage.ElementsAreAqualAssert(productPage.GetRemoveButtonText(), "REMOVE");
+            productPage.ElementsAreAqualAssert(productPage.GetRemoveButtonText(), "REMOVE");
         }
-
     }
 }

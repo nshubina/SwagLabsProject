@@ -1,50 +1,45 @@
 ﻿using NUnit.Framework;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Support.UI;
-using SeleniumExtras.WaitHelpers;
-using SwagLabsProject.Login;
-using System;
 
 namespace SwagLabsProject.Tests
 {
     [TestFixture]
-    public class LoginTests:BasePO
+    public class LoginTests : BasePO
     {
-      
-        [Test]
-        public void LogIn_WithUseValidAndExistCreds_ShouldUserIsLogedIn()
-        {
-            var loginPage = new LoginPO(Driver);
+        /*
+          [Test]
+          public void LogIn_WithUseValidAndExistCreds_ShouldUserIsLogedIn()
+          {
+              var loginPage = new LoginPO(Driver);
 
-            var productsPage = loginPage.LoginWithCreds("standard_user", "secret_sauce");
-          
-            Assert.AreEqual(productsPage.GetCategoryTitle(), "PRODUCTS");
-        } 
+              var productsPage = loginPage.LoginWithCreds("standard_user", "secret_sauce");
 
-        [Test]
-        public void LogIn_WithUseInvalidUserNameAndValidPassword_ShouldAppearErrorMsg()
-        {
-            var loginPage = new LoginPO(Driver);         
-            loginPage.LoginWithCreds("testuser12", "secret_sauce");
+              Assert.AreEqual(productsPage.GetCategoryTitle(), "PRODUCTS");
+          } 
 
-            var waiter = new WebDriverWait(Driver, TimeSpan.FromSeconds(5));
-            waiter.Until(ExpectedConditions.ElementIsVisible(By.ClassName("error-button")));
+          [Test]
+          public void LogIn_WithUseInvalidUserNameAndValidPassword_ShouldAppearErrorMsg()
+          {
+              var loginPage = new LoginPO(Driver);         
+              loginPage.LoginWithCreds("testuser12", "secret_sauce");
 
-            var errorMsg = "Epic sadface: Username and password do not match any user in this service";
-            Assert.AreEqual(loginPage.GetErrorMessage(), errorMsg);
-        }
+              var waiter = new WebDriverWait(Driver, TimeSpan.FromSeconds(5));
+              waiter.Until(ExpectedConditions.ElementIsVisible(By.ClassName("error-button")));
 
-        [Test]
-        public void LogIn_WithEmptyRequiredFields_ShouldAppearErrorMsg()
-        {
-            var loginPage = new LoginPO(Driver);
-            loginPage.LoginWithCreds("", "");
+              var errorMsg = "Epic sadface: Username and password do not match any user in this service";
+              Assert.AreEqual(loginPage.GetErrorMessage(), errorMsg);
+          }
 
-            var waiter = new WebDriverWait(Driver, TimeSpan.FromSeconds(5));
-            waiter.Until(ExpectedConditions.ElementIsVisible(By.ClassName("error-button")));
+          [Test]
+          public void LogIn_WithEmptyRequiredFields_ShouldAppearErrorMsg()
+          {
+              var loginPage = new LoginPO(Driver);
+              loginPage.LoginWithCreds("", "");
 
-            var errorMsg = "Epic sadface: Username is required";
-            Assert.AreEqual(loginPage.GetErrorMessage(), errorMsg);
-        }
+              var waiter = new WebDriverWait(Driver, TimeSpan.FromSeconds(5));
+              waiter.Until(ExpectedConditions.ElementIsVisible(By.ClassName("error-button")));
+
+              var errorMsg = "Epic sadface: Username is required";
+              Assert.AreEqual(loginPage.GetErrorMessage(), errorMsg);
+          }*/
     }
 }
