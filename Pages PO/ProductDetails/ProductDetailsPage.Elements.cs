@@ -5,19 +5,13 @@ namespace SwagLabsProject.Pages_PO.ProductDetails
 {
     public partial class ProductDetailsPage
     {
-        /* [FindsBy(How.CssSelector, Using = ".header_secondary_container .title")]
-         private IWebDriver _titleCategory;*/
-
-        [FindsBy(How = How.Id, Using = "item_0_title_link")]
-        private IWebElement _productName;
+        [FindsBy(How = How.XPath, Using = "//*[@id='inventory_item_container']/div/div/div[2]/div[1]")]
+        private IWebElement _productTitle;
 
         [FindsBy(How = How.Id, Using = "add-to-cart-sauce-labs-bike-light")]
-        private IWebElement _btnAddToCart;
+        private IWebElement _addToCart;
 
-        [FindsBy(How = How.Id, Using = "remove-sauce-labs-bike-light")]
-        private IWebElement _btnRemoveProduct;
-
-        [FindsBy(How = How.Id, Using = "shopping_cart_link")]
-        private IWebElement _btnCartIconBtn;
+        [FindsBy(How = How.ClassName, Using = "shopping_cart_link")]
+        private IWebElement _cartLink;
     }
 }
