@@ -1,9 +1,7 @@
 ﻿using NUnit.Framework;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Support.UI;
-using SeleniumExtras.WaitHelpers;
+using SwagLabsProject.Helpers;
 using SwagLabsProject.Login;
-using System;
+
 
 namespace SwagLabsProject.Tests
 {
@@ -24,8 +22,7 @@ namespace SwagLabsProject.Tests
             var loginPage = new LoginPage(Driver);
             loginPage.LoginWithCreds("testuser12", "secret_sauce");
 
-            var waiter = new WebDriverWait(Driver, TimeSpan.FromSeconds(5));
-            waiter.Until(ExpectedConditions.ElementIsVisible(By.ClassName("error-button")));
+            Waitings.WaitUntil(Driver, loginPage._xBtn, 5);
 
             var errorMsg = "Epic sadface: Username and password do not match any user in this service";
             loginPage.AssertElementsAreEqual(loginPage.GetErrorMessage(), errorMsg);
@@ -37,8 +34,7 @@ namespace SwagLabsProject.Tests
             var loginPage = new LoginPage(Driver);
             loginPage.LoginWithCreds("", "");
 
-            var waiter = new WebDriverWait(Driver, TimeSpan.FromSeconds(5));
-            waiter.Until(ExpectedConditions.ElementIsVisible(By.ClassName("error-button")));
+            Waitings.WaitUntil(Driver, loginPage._xBtn, 5);
 
             var errorMsg = "Epic sadface: Username is required";
             loginPage.AssertElementsAreEqual(loginPage.GetErrorMessage(), errorMsg);
