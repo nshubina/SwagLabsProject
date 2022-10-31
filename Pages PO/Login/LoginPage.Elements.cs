@@ -16,5 +16,8 @@ namespace SwagLabsProject.Login
 
         [FindsBy(How = How.XPath, Using = "//form/div[3]/h3")]
         private IWebElement _errorLogin;
+
+        [FindsBy(How = How.ClassName, Using = "error-button")]
+        public IWebElement _xBtn;
     }
 }
