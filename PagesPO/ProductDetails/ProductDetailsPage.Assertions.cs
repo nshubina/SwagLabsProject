@@ -1,6 +1,6 @@
 ﻿using NUnit.Framework;
 
-namespace SwagLabsProject.Pages_PO.ProductDetails
+namespace SwagLabsProject.PagesPO.ProductDetails
 {
     public partial class ProductDetailsPage
     {

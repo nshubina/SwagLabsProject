@@ -1,7 +1,7 @@
 ﻿using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
 
-namespace SwagLabsProject.Login
+namespace SwagLabsProject.PagesPO.Login
 {
     public partial class LoginPage
     {

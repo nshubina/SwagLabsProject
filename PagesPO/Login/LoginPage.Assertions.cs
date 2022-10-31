@@ -1,6 +1,6 @@
 ﻿using NUnit.Framework;
 
-namespace SwagLabsProject.Login
+namespace SwagLabsProject.PagesPO.Login
 {
     public partial class LoginPage
     {

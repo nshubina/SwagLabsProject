@@ -1,8 +1,8 @@
 ﻿using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
-using SwagLabsProject.Pages_PO.ProductDetails;
+using SwagLabsProject.PagesPO.ProductDetails;
 
-namespace SwagLabsProject.Pages_PO.Products
+namespace SwagLabsProject.PagesPO.Products
 {
     public partial class ProductsPage
     {

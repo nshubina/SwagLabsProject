@@ -1,9 +1,9 @@
 ﻿using NUnit.Framework;
-using SwagLabsProject.Login;
+using SwagLabsProject.PagesPO.Login;
 
 namespace SwagLabsProject.Tests
 {
-    public class ProdTest : BasePO
+    public class ProductsPageTests : BasePO
     {
         [Test]
         public void WhenClickProductNameExpectProductDetails()

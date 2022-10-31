@@ -1,5 +1,5 @@
 ﻿using NUnit.Framework;
-using SwagLabsProject.Login;
+using SwagLabsProject.PagesPO.Login;
 
 namespace SwagLabsProject.Tests
 {
