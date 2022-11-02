@@ -1,5 +1,6 @@
 ﻿using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
+using SwagLabsProject.PagesPO.Cart;
 using SwagLabsProject.PagesPO.ProductDetails;
 
 namespace SwagLabsProject.PagesPO.Products
@@ -50,5 +51,14 @@ namespace SwagLabsProject.PagesPO.Products
         {
             return _btnRemoveProduct.Text;
         }
+
+        public CartPage ClickOnCartIcon()
+        {
+            _btnCartIcon.Click();
+            return new CartPage(_driver);
+        }
+
+
+
     }
 }
