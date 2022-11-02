@@ -8,5 +8,11 @@ namespace SwagLabsProject.PagesPO.Products
         {
             Assert.AreEqual(firstElement, secondElement);
         }
+
+        public void AppearRemoveButton()
+        {
+            Assert.AreEqual(true, _btnRemoveProduct.Displayed);
+        }
+
     }
 }
