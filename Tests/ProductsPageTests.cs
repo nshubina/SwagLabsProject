@@ -40,6 +40,17 @@ namespace SwagLabsProject.Tests
 
             productPage.ElementsAreAqualAssert(productPage.GetAddToCartButtonText(), "ADD TO CART");
         }
+
+        [Test]
+        public void WhenAddItemAndClickOnCartIconShouldOpenCartPage()
+        {
+            var loginPage = new LoginPage(Driver);
+            var productPage = loginPage.LoginWithCreds("standard_user", "secret_sauce");
+
+            productPage.AddProductToCard();
+            productPage.ClickOnCartIcon();
+            productPage.AppearRemoveButton();
+        }
     }
 }
 
