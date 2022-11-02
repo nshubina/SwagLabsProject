@@ -37,6 +37,11 @@ namespace SwagLabsProject.PagesPO.Login
             return new ProductsPage(_driver);
         }
 
+        public void PressLoginButton()
+        {
+            _btnLogin.Click();
+        }
+
         public string GetErrorMessage()
         {
             return _errorLogin.Text;
