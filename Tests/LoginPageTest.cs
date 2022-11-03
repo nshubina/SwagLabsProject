@@ -18,8 +18,7 @@ namespace SwagLabsProject.Tests
         }
 
         [Test]
-        [Description("Appear error message when a user logs in with invalid creds")]
-
+        [Description("Appear error message when a user logs")]
         public void LogInWithUseInvalidUserNameAndValidPasswordShouldAppearErrorMsg()
         {
             var loginPage = new LoginPage(Driver)
@@ -34,7 +33,6 @@ namespace SwagLabsProject.Tests
 
         [Test]
         [Description("Appear error message when a user logs in with empty creds")]
-
         public void LogInWithEmptyRequiredFieldsShouldAppearErrorMsg()
         {
             var loginPage = new LoginPage(Driver)
