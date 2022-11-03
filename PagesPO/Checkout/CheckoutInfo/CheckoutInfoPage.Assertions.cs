@@ -1,10 +1,10 @@
 ﻿using NUnit.Framework;
 
-namespace SwagLabsProject.PagesPO.Checkout
+namespace SwagLabsProject.PagesPO.Checkout.CheckoutInfo
 {
-    public partial class CheckoutPage
+    public partial class CheckoutInfoPage
     {
-        public CheckoutPage AssertUserIsNavigatedToCheckoutPage()
+        public CheckoutInfoPage AssertUserIsNavigatedToCheckoutPage()
         {
             Assert.Multiple(() =>
             {
