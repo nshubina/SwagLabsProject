@@ -8,6 +8,7 @@ namespace SwagLabsProject.Tests
     public class LoginPageTest : BasePO
     {
         [Test]
+        [Description("LogIn use valid and exist creds")]
         public void LogInWithUseValidAndExistCredsShouldUserIsLogedIn()
         {
             var loginPage = new LoginPage(Driver);
@@ -17,6 +18,8 @@ namespace SwagLabsProject.Tests
         }
 
         [Test]
+        [Description("Appear error message when a user logs in with invalid creds")]
+
         public void LogInWithUseInvalidUserNameAndValidPasswordShouldAppearErrorMsg()
         {
             var loginPage = new LoginPage(Driver)
@@ -30,11 +33,13 @@ namespace SwagLabsProject.Tests
         }
 
         [Test]
+        [Description("Appear error message when a user logs in with empty creds")]
+
         public void LogInWithEmptyRequiredFieldsShouldAppearErrorMsg()
         {
             var loginPage = new LoginPage(Driver)
                 .SetPassword("")
-                .SetPassword(" ")
+                .SetPassword("")
                 .PressLoginButton();
 
             Waitings.WaitUntil(Driver, loginPage._xBtn, 5);
