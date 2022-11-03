@@ -52,7 +52,7 @@ namespace SwagLabsProject.Tests
             var productPage = loginPage.LoginWithCreds("standard_user", "secret_sauce")
                 .AddProductToCard();
 
-            var cartPage = productPage.ClickOnCartIcon()
+            productPage.ClickOnCartIcon()
                 .AssertAddedProductIsEqualToProductInTheCart(productPage._nameProduct.Text);
         }
     }
