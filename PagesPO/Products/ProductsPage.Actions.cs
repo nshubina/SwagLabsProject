@@ -32,14 +32,16 @@ namespace SwagLabsProject.PagesPO.Products
             return new ProductDetailsPage(_driver);
         }
 
-        public void AddProductToCard()
+        public ProductsPage AddProductToCard()
         {
             _btnAddToCart.Click();
+            return this;
         }
 
-        public void RemoveProduct()
+        public ProductsPage RemoveProduct()
         {
             _btnRemoveProduct.Click();
+            return this;
         }
 
         public string GetAddToCartButtonText()
