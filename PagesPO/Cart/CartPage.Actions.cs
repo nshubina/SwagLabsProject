@@ -1,5 +1,6 @@
 ﻿using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
+using SwagLabsProject.PagesPO.Checkout;
 
 namespace SwagLabsProject.PagesPO.Cart
 {
@@ -12,5 +13,12 @@ namespace SwagLabsProject.PagesPO.Cart
             _driver = driver;
             PageFactory.InitElements(_driver, this);
         }
+
+        public CheckoutPage ClickCheckout()
+        {
+            _btnCheckout.Click();
+            return new CheckoutPage(_driver);
+        }
+
     }
 }
