@@ -8,16 +8,16 @@ namespace SwagLabsProject.PagesPO.Products
         [FindsBy(How = How.CssSelector, Using = ".header_secondary_container .title")]
         private IWebElement _titleCategory;
 
-        [FindsBy(How = How.Id, Using = "item_0_title_link")]
-        private IWebElement _nameProduct;
+        [FindsBy(How = How.Id, Using = "item_4_title_link")]
+        public IWebElement _nameProduct;
 
-        [FindsBy(How = How.Id, Using = "remove-sauce-labs-bike-light")]
+        [FindsBy(How = How.Id, Using = "remove-sauce-labs-backpack")]
         private IWebElement _btnRemoveProduct;
 
-        [FindsBy(How = How.Id, Using = "add-to-cart-sauce-labs-bike-light")]
+        [FindsBy(How = How.Id, Using = "add-to-cart-sauce-labs-backpack")]
         private IWebElement _btnAddToCart;
 
         [FindsBy(How = How.ClassName, Using = "shopping_cart_link")]
-        private IWebElement _btnCartIcon;
+        public IWebElement _btnCartIcon;
     }
 }

@@ -59,8 +59,5 @@ namespace SwagLabsProject.PagesPO.Products
             _btnCartIcon.Click();
             return new CartPage(_driver);
         }
-
-
-
     }
 }
