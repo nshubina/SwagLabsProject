@@ -26,10 +26,10 @@ namespace SwagLabsProject.Tests
         public void WhenClickAddToCartBtnOnProductExpectProductAddsToCard()
         {
             var loginPage = new LoginPage(Driver);
-            var productPage = loginPage.LoginWithCreds("standard_user", "secret_sauce")
+            var productsPage = loginPage.LoginWithCreds("standard_user", "secret_sauce")
                 .AddProductToCard();
 
-            productPage.ElementsAreAqualAssert(productPage.GetRemoveButtonText(), "REMOVE");
+            productsPage.ElementsAreAqualAssert(productsPage.GetRemoveButtonText(), "REMOVE");
         }
 
         [Test]

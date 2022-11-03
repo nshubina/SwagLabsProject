@@ -9,12 +9,12 @@ namespace SwagLabsProject.Tests
         public void When_ClickAddToCartButtonOnProductDetailsPage_ShouldItemAddToCart()
         {
             var loginPage = new LoginPage(Driver);
-            var productPage = loginPage.LoginWithCreds("standard_user", "secret_sauce");
+            var productsPage = loginPage.LoginWithCreds("standard_user", "secret_sauce");
 
-            var productDetailsPage = productPage.ClickOnProduct();
+            var productDetailsPage = productsPage.ClickOnProduct();
             productDetailsPage.AddToCart();
 
-            productDetailsPage.ElementsAreAqualAssert(productPage.GetRemoveButtonText(), "REMOVE");
+            productDetailsPage.ElementsAreAqualAssert(productsPage.GetRemoveButtonText(), "REMOVE");
         }
 
     }
