@@ -13,7 +13,7 @@ namespace SwagLabsProject.Tests
             var loginPage = new LoginPage(Driver);
             var productsPage = loginPage.LoginWithCreds("standard_user", "secret_sauce");
 
-            loginPage.AssertHeadersAreEqual(productsPage.GetCategoryTitle(), "PRODUCTS");
+            loginPage.AssertElementsAreEqual(productsPage.GetCategoryTitle(), "PRODUCTS");
         }
 
         [Test]
