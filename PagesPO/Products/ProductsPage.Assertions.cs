@@ -4,15 +4,17 @@ namespace SwagLabsProject.PagesPO.Products
 {
     public partial class ProductsPage
     {
-        public void ElementsAreAqualAssert(string firstElement, string secondElement)
+        public ProductsPage ElementsAreAqualAssert(string firstElement, string secondElement)
         {
             Assert.AreEqual(firstElement, secondElement);
+            return this;
         }
-
-        public void AppearRemoveButton()
-        {
-            Assert.AreEqual(true, _btnRemoveProduct.Displayed);
-        }
+        /*
+                public void AppearRemoveButton()
+                {
+                    Assert.AreEqual(true, _btnRemoveProduct.Displayed);
+                }
+        */
 
     }
 }
