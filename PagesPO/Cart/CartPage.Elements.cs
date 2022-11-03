@@ -11,5 +11,8 @@ namespace SwagLabsProject.PagesPO.Cart
         [FindsBy(How = How.Id, Using = "item_4_title_link")]
         private IWebElement _addedNameProduct;
 
+        [FindsBy(How = How.Id, Using = "checkout")]
+        private IWebElement _btnCheckout;
+
     }
 }
