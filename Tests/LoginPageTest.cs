@@ -19,25 +19,27 @@ namespace SwagLabsProject.Tests
         [Test]
         public void LogInWithUseInvalidUserNameAndValidPasswordShouldAppearErrorMsg()
         {
-            var loginPage = new LoginPage(Driver);
-            loginPage.LoginWithCreds("testuser12", "secret_sauce");
+            var loginPage = new LoginPage(Driver)
+                .SetPassword("testuser12")
+                .SetPassword("secret_sause")
+                .PressLoginButton();
 
             Waitings.WaitUntil(Driver, loginPage._xBtn, 5);
 
-            var errorMsg = "Epic sadface: Username and password do not match any user in this service";
-            loginPage.AssertElementsAreEqual(loginPage.GetErrorMessage(), errorMsg);
+            loginPage.AssertElementsAreEqual(loginPage.GetErrorMessage(), "Epic sadface: Username and password do not match any user in this service");
         }
 
         [Test]
         public void LogInWithEmptyRequiredFieldsShouldAppearErrorMsg()
         {
-            var loginPage = new LoginPage(Driver);
-            loginPage.LoginWithCreds("", "");
+            var loginPage = new LoginPage(Driver)
+                .SetPassword("")
+                .SetPassword(" ")
+                .PressLoginButton();
 
             Waitings.WaitUntil(Driver, loginPage._xBtn, 5);
 
-            var errorMsg = "Epic sadface: Username is required";
-            loginPage.AssertElementsAreEqual(loginPage.GetErrorMessage(), errorMsg);
+            loginPage.AssertElementsAreEqual(loginPage.GetErrorMessage(), "Epic sadface: Username is required");
         }
     }
 }

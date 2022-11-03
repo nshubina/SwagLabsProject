@@ -14,32 +14,34 @@ namespace SwagLabsProject.PagesPO.Login
             PageFactory.InitElements(driver, this);
         }
 
-        public void SetUsername(string uName)
+        public LoginPage SetUsername(string uName)
         {
-
             _fldUsername.Click();
             _fldUsername.Clear();
-            _fldUsername.SendKeys(uName); ;
+            _fldUsername.SendKeys(uName);
+            return this;
         }
 
-        public void SetPassword(string password)
+        public LoginPage SetPassword(string password)
         {
             _fldPassword.Click();
             _fldPassword.Clear();
             _fldPassword.SendKeys(password);
+            return this;
+        }
+
+        public LoginPage PressLoginButton()
+        {
+            _btnLogin.Click();
+            return this;
         }
 
         public ProductsPage LoginWithCreds(string uName, string password)
         {
             SetUsername(uName);
             SetPassword(password);
-            _btnLogin.Click();
+            PressLoginButton();
             return new ProductsPage(_driver);
-        }
-
-        public void PressLoginButton()
-        {
-            _btnLogin.Click();
         }
 
         public string GetErrorMessage()
