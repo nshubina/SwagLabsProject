@@ -1,5 +1,6 @@
 ﻿using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
+using SwagLabsProject.PagesPO.BurgerMenu;
 using SwagLabsProject.PagesPO.Cart;
 using SwagLabsProject.PagesPO.ProductDetails;
 
@@ -58,6 +59,12 @@ namespace SwagLabsProject.PagesPO.Products
         {
             _btnCartIcon.Click();
             return new CartPage(_driver);
+        }
+
+        public Menu ClickMenuBtn()
+        {
+            _btnMenu.Click();
+            return new Menu(_driver);
         }
     }
 }

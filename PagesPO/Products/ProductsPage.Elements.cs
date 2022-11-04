@@ -19,5 +19,9 @@ namespace SwagLabsProject.PagesPO.Products
 
         [FindsBy(How = How.ClassName, Using = "shopping_cart_link")]
         public IWebElement _btnCartIcon;
+
+        [FindsBy(How = How.Id, Using = "react-burger-menu-btn")]
+        private IWebElement _btnMenu;
+
     }
 }
