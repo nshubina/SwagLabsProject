@@ -5,6 +5,9 @@ namespace SwagLabsProject.PagesPO.Login
 {
     public partial class LoginPage
     {
+        [FindsBy(How = How.ClassName, Using = "login_logo")]
+        public IWebElement LogoLogin;
+
         [FindsBy(How = How.Id, Using = "user-name")]
         private IWebElement _fldUsername;
 
