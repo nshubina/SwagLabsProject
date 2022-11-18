@@ -1,6 +1,6 @@
 ﻿namespace SwagLabsProject.Tests
 {
-    internal class CheckoutPageTests
+    public partial class CheckoutPageTests
     {
     }
 }
